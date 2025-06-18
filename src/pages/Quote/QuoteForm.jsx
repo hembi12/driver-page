@@ -2,21 +2,22 @@
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import { Link } from "react-router-dom";
 import "react-phone-number-input/style.css";
 
 export default function QuoteForm() {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
-  const [telefono, setTelefono] = useState(""); // ya viene en formato +521234567890
+  const [telefono, setTelefono] = useState("");
   const [comentarios, setComentarios] = useState("");
   const [aceptaPolitica, setAceptaPolitica] = useState(false);
 
   const [error, setError] = useState("");
   const [exito, setExito] = useState(false);
   const [enviando, setEnviando] = useState(false);
+  const [mostrarModal, setMostrarModal] = useState(false);
+  const [numeroConfirmacion, setNumeroConfirmacion] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!nombre.trim() || !correo.trim() || !telefono || !aceptaPolitica) {
@@ -33,16 +34,28 @@ export default function QuoteForm() {
     setExito(false);
     setEnviando(true);
 
+    const codigo = "#" + Math.random().toString(36).substring(2, 8).toUpperCase();
+    setNumeroConfirmacion(codigo);
+
     const datosContacto = {
       nombre,
       correo,
       telefono,
       comentarios,
+      numeroConfirmacion: codigo,
     };
 
-    console.log("Enviando cotización:", datosContacto);
+    try {
+      const res = await fetch("http://localhost:3001/send-quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(datosContacto),
+      });
 
-    setTimeout(() => {
+      const data = await res.json();
+
+      if (!data.success) throw new Error(data.message);
+
       setExito(true);
       setEnviando(false);
       setNombre("");
@@ -50,7 +63,12 @@ export default function QuoteForm() {
       setTelefono("");
       setComentarios("");
       setAceptaPolitica(false);
-    }, 2000);
+      setMostrarModal(true);
+    } catch (err) {
+      console.error("❌ Error al enviar el correo:", err.message);
+      setError("Hubo un problema al enviar la cotización. Intenta nuevamente.");
+      setEnviando(false);
+    }
   };
 
   return (
@@ -130,13 +148,12 @@ export default function QuoteForm() {
             className="text-sm text-gray-700 leading-snug"
           >
             Acepto la{" "}
-            <Link to="/privacy-policy" className="text-indigo-600 underline">
+            <a href="/privacy-policy" className="text-indigo-600 underline">
               política de privacidad
-            </Link>
+            </a>
           </label>
         </div>
 
-        {/* Mensajes */}
         {error && <p className="text-red-600 text-sm">{error}</p>}
         {exito && (
           <p className="text-green-600 text-sm">
@@ -159,6 +176,32 @@ export default function QuoteForm() {
           )}
         </button>
       </form>
+
+      {/* Modal de confirmación */}
+      {mostrarModal && (
+        <div className="fixed inset-0 bg-transparent backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm w-full text-center border border-gray-200">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              ¡Cotización enviada!
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Gracias por compartir tus datos. Pronto recibirás una respuesta.
+            </p>
+            <p className="text-sm text-gray-500 mb-6">
+              Tu número de confirmación es:{" "}
+              <span className="font-mono font-semibold text-gray-800">
+                {numeroConfirmacion}
+              </span>
+            </p>
+            <button
+              onClick={() => setMostrarModal(false)}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
