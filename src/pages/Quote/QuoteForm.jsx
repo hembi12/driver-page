@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
@@ -10,12 +10,17 @@ export default function QuoteForm() {
   const [telefono, setTelefono] = useState("");
   const [comentarios, setComentarios] = useState("");
   const [aceptaPolitica, setAceptaPolitica] = useState(false);
-
   const [error, setError] = useState("");
   const [exito, setExito] = useState(false);
   const [enviando, setEnviando] = useState(false);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [numeroConfirmacion, setNumeroConfirmacion] = useState("");
+  const [detallesViaje, setDetallesViaje] = useState(null);
+
+  useEffect(() => {
+    const datos = JSON.parse(localStorage.getItem("cotizacion"));
+    setDetallesViaje(datos);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +48,7 @@ export default function QuoteForm() {
       telefono,
       comentarios,
       numeroConfirmacion: codigo,
+      ...detallesViaje,
     };
 
     try {
