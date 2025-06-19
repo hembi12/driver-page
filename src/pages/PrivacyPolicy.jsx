@@ -5,14 +5,14 @@ export default function PrivacyPolicy() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50 px-6 py-12">
+    <div className="min-h-screen bg-[#f5f7fa] px-6 py-12">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Política de Privacidad
         </h1>
 
         <p className="text-gray-700 mb-4">
-          En <strong>Driver</strong> nos tomamos muy en serio la privacidad de
+          En <strong>HM Mobility</strong> nos tomamos muy en serio la privacidad de
           tus datos. Esta política describe cómo recopilamos, usamos y
           protegemos la información personal que nos proporcionas a través de
           nuestro sitio web o formulario de cotización.
@@ -26,7 +26,19 @@ export default function PrivacyPolicy() {
           <li>Correo electrónico</li>
           <li>Número de teléfono</li>
           <li>
-            Datos del viaje (origen, destino, fecha, hora, tipo de servicio)
+            Tipo de servicio y viaje
+          </li>
+          <li>
+            Número de pasajeros
+          </li>
+          <li>
+            Dirección de origen y destino
+          </li>
+          <li>
+            Fecha y hora del servicio
+          </li>
+          <li>
+            Aceptación de la politica de privacidad
           </li>
         </ul>
 
@@ -34,8 +46,7 @@ export default function PrivacyPolicy() {
           2. Uso de la información
         </h2>
         <p className="text-gray-700 mb-4">
-          Utilizamos tus datos exclusivamente para enviarte cotizaciones
-          personalizadas y contactar contigo si es necesario para coordinar el
+          Utilizamos tus datos exclusivamente para contactar contigo para coordinar el
           servicio solicitado.
         </p>
 
@@ -53,7 +64,14 @@ export default function PrivacyPolicy() {
         </h2>
         <p className="text-gray-700 mb-4">
           Puedes solicitar en cualquier momento la modificación o eliminación de
-          tus datos personales escribiéndonos a nuestro correo de contacto.
+          tus datos personales escribiéndonos a nuestro correo de contacto:{" "}
+          <a
+            href="mailto:hectormartilb@gmail.com"
+            className="text-indigo-600 hover:underline"
+          >
+            hectormartilb@gmail.com
+          </a>
+          .
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
@@ -73,7 +91,7 @@ export default function PrivacyPolicy() {
         <div className="mt-10 text-center">
           <button
             onClick={() => navigate(-1)}
-            className="inline-block px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition"
+            className="cursor-pointer inline-block px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition"
           >
             Volver atrás
           </button>

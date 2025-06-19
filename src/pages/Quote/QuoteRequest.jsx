@@ -83,7 +83,7 @@ export default function QuoteRequest() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-8 md:px-8">
+    <div className="min-h-screen bg-[#f5f7fa] px-4 py-8 md:px-8">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Encabezado */}
         <div className="text-center">

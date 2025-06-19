@@ -86,7 +86,7 @@ export default function Form() {
   };
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-[#f5f7fa]">
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
           Planifica tu viaje

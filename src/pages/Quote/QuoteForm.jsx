@@ -39,7 +39,8 @@ export default function QuoteForm() {
     setExito(false);
     setEnviando(true);
 
-    const codigo = "#" + Math.random().toString(36).substring(2, 8).toUpperCase();
+    const codigo =
+      "#" + Math.random().toString(36).substring(2, 8).toUpperCase();
     setNumeroConfirmacion(codigo);
 
     const datosContacto = {
@@ -80,7 +81,7 @@ export default function QuoteForm() {
   return (
     <div className="mt-8 max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-6 w-full lg:w-1/2">
       <h2 className="text-xl font-semibold mb-6 text-gray-800 text-left">
-        Tus datos para enviarte la cotización
+        Información de contacto
       </h2>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
