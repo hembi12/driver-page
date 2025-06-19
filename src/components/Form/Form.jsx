@@ -86,16 +86,16 @@ export default function Form() {
   };
 
   return (
-    <section className="py-16 px-4 bg-[#f5f7fa]">
+    <section id="formulario" className="py-16 px-4 bg-neutral-100">
+      {" "}
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          Planifica tu viaje
+          Solicita tu cotización
         </h2>
         <p className="text-gray-600 text-lg">
-          Llena el siguiente formulario para recibir una cotización personalizada
+          Llena el formulario con los detalles de tu viaje
         </p>
       </div>
-
       <TravelForm
         {...{
           tipoServicio,
