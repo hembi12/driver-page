@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero/Hero";
 import Form from "./components/Form/Form";
@@ -7,9 +7,19 @@ import Vehicles from "./components/Vehicles";
 import Stats from "./components/Stats";
 import QuoteRequest from "./pages/Quote/QuoteRequest";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Footer from "./components/Footer"; // 👈 asegúrate de importar correctamente
+import TermsAndConditions from "./pages/TermsAndConditions";
+import Footer from "./components/Footer";
 
 export default function App() {
+  const location = useLocation();
+
+  // Rutas donde no debe mostrarse el footer
+  const ocultarFooter = [
+    "/solicitud-de-cotizacion",
+    "/politica-de-privacidad",
+    "/terminos-y-condiciones",
+  ].includes(location.pathname);
+
   return (
     <>
       <Navbar />
@@ -26,10 +36,13 @@ export default function App() {
             </>
           }
         />
-        <Route path="/quote-request" element={<QuoteRequest />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/solicitud-de-cotizacion" element={<QuoteRequest />} />
+        <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
+        <Route path="/terminos-y-condiciones" element={<TermsAndConditions />} />
       </Routes>
-      <Footer /> {/* 👈 visible en todas las rutas */}
+
+      {/* Mostrar footer solo si no estamos en páginas especiales */}
+      {!ocultarFooter && <Footer />}
     </>
   );
 }

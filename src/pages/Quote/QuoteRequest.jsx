@@ -8,7 +8,6 @@ import {
   MapPin,
   CalendarDays,
   Clock,
-  Route,
 } from "lucide-react";
 import QuoteForm from "./QuoteForm";
 
@@ -61,7 +60,7 @@ export default function QuoteRequest() {
 
   if (!datos) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 text-gray-700 text-lg">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 text-gray-700 text-lg">
         No hay datos disponibles.
       </div>
     );
@@ -105,47 +104,47 @@ export default function QuoteRequest() {
 
             <ul className="divide-y divide-gray-200">
               <li className="flex items-center gap-3 py-3">
-                <Car className="w-5 h-5 text-indigo-600" />
+                <Car className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">Servicio:</span>
                 <span className="ml-auto text-gray-900">
                   {datos.tipoServicio}
                 </span>
               </li>
               <li className="flex items-center gap-3 py-3">
-                <Users className="w-5 h-5 text-indigo-600" />
+                <Users className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">Pasajeros:</span>
                 <span className="ml-auto text-gray-900">
                   {datos.numeroPasajeros}
                 </span>
               </li>
               <li className="flex items-center gap-3 py-3">
-                <Repeat className="w-5 h-5 text-indigo-600" />
+                <Repeat className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">
                   Tipo de viaje:
                 </span>
                 <span className="ml-auto text-gray-900">{datos.tipoViaje}</span>
               </li>
               <li className="flex items-center gap-3 py-3">
-                <MapPin className="w-5 h-5 text-indigo-600" />
+                <MapPin className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">Origen:</span>
                 <span className="ml-auto text-gray-900 text-right">
                   {datos.origen}
                 </span>
               </li>
               <li className="flex items-center gap-3 py-3">
-                <Route className="w-5 h-5 text-indigo-600" />
+                <MapPin className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">Destino:</span>
                 <span className="ml-auto text-gray-900 text-right">
                   {datos.destino}
                 </span>
               </li>
               <li className="flex items-center gap-3 py-3">
-                <CalendarDays className="w-5 h-5 text-indigo-600" />
+                <CalendarDays className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">Fecha:</span>
                 <span className="ml-auto text-gray-900">{fechaFormateada}</span>
               </li>
               <li className="flex items-center gap-3 py-3">
-                <Clock className="w-5 h-5 text-indigo-600" />
+                <Clock className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-gray-700">Hora:</span>
                 <span className="ml-auto text-gray-900">{horaFormateada}</span>
               </li>

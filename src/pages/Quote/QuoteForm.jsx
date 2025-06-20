@@ -85,7 +85,7 @@ export default function QuoteForm() {
       </h2>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
-        <div className="bg-gray-100 p-3 rounded-xl">
+        <div className="bg-neutral-50 border border-neutral-300 p-3 rounded-xl">
           <input
             type="text"
             name="nombre"
@@ -99,7 +99,7 @@ export default function QuoteForm() {
           />
         </div>
 
-        <div className="bg-gray-100 p-3 rounded-xl">
+        <div className="bg-neutral-50 border border-neutral-300 p-3 rounded-xl">
           <input
             type="email"
             name="correo"
@@ -113,7 +113,7 @@ export default function QuoteForm() {
           />
         </div>
 
-        <div className="bg-gray-100 p-3 rounded-xl">
+        <div className="bg-neutral-50 border border-neutral-300 p-3 rounded-xl">
           <PhoneInput
             international
             defaultCountry="MX"
@@ -127,7 +127,7 @@ export default function QuoteForm() {
           />
         </div>
 
-        <div className="bg-gray-100 p-3 rounded-xl">
+        <div className="bg-neutral-50 border border-neutral-300 p-3 rounded-xl">
           <textarea
             name="comentarios"
             rows={3}
@@ -148,14 +148,14 @@ export default function QuoteForm() {
               setAceptaPolitica(e.target.checked);
               if (error) setError("");
             }}
-            className="h-3 w-4 cursor-pointer text-indigo-600 border-gray-300 rounded mt-1"
+            className="h-3 w-4 cursor-pointer text-blue-600 border-gray-300 rounded mt-1"
           />
           <label
             htmlFor="politica"
             className="text-sm text-gray-700 leading-snug"
           >
             Acepto la{" "}
-            <a href="/privacy-policy" className="text-indigo-600 underline">
+            <a href="/privacy-policy" className="text-blue-700 hover:text-blue-600 hover:underline">
               política de privacidad
             </a>
           </label>
@@ -171,7 +171,7 @@ export default function QuoteForm() {
         <button
           type="submit"
           disabled={enviando}
-          className="cursor-pointer w-full bg-indigo-600 text-white py-3 rounded-lg text-sm font-medium hover:bg-indigo-700 transition duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+          className="cursor-pointer w-full bg-blue-600 text-white py-3 rounded-lg text-sm font-medium hover:bg-blue-700 transition duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
         >
           {enviando ? (
             <>
@@ -202,7 +202,7 @@ export default function QuoteForm() {
             </p>
             <button
               onClick={() => setMostrarModal(false)}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm"
+              className="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm"
             >
               Cerrar
             </button>

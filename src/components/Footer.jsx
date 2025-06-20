@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950 border-t border-white/30 text-white py-8 px-6">
+    <footer className="bg-neutral-950 border-t border-white/10 text-white py-8 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         {/* Información principal */}
         <div>
@@ -12,32 +12,16 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links rápidos */}
-        <div className="flex flex-col sm:flex-row gap-4 text-sm text-white/80">
-          <a href="#cotizacion" className="hover:text-neutral-100 hover:underline transition">
-            Cotización
-          </a>
-          <a href="#reseñas" className="hover:text-neutral-100 hover:underline transition">
-            Reseñas
-          </a>
-          <a href="#vehiculos" className="hover:text-neutral-100 hover:underline transition">
-            Vehículos
-          </a>
-          <a href="#resultados" className="hover:text-neutral-100 hover:underline transition">
-            Resultados
-          </a>
-        </div>
-
         {/* Enlaces legales */}
         <div className="flex flex-col sm:flex-row gap-4 text-sm text-white/80">
           <a
-            href="/privacy-policy"
+            href="/politica-de-privacidad"
             className="hover:text-neutral-100 hover:underline transition"
           >
             Aviso de privacidad
           </a>
           <a
-            href="/terminos-condiciones"
+            href="/terminos-y-condiciones"
             className="hover:text-neutral-100 hover:underline transition"
           >
             Términos y condiciones

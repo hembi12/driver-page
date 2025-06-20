@@ -35,7 +35,7 @@ export default function HeroTabs({ activeTab }) {
                   formSection.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="cursor-pointer bg-blue-700 hover:bg-blue-600 text-white px-5 py-3 rounded-full border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+              className="cursor-pointer bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-full border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Reservar Ahora <ChevronRight className="w-4 h-4" />
             </button>

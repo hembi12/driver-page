@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
           tus datos personales escribiéndonos a nuestro correo de contacto:{" "}
           <a
             href="mailto:hectormartilb@gmail.com"
-            className="text-blue-600 hover:underline"
+            className="text-blue-700 hover:text-blue-600 hover:underline"
           >
             hectormartilb@gmail.com
           </a>

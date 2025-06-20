@@ -67,7 +67,7 @@ export default function TravelForm({
     setTimeout(() => {
       setExito("¡Cotización enviada con éxito!");
       setEnviando(false);
-      navigate("/quote-request");
+      navigate("/solicitud-de-cotizacion");
     }, 2000);
   };
 
@@ -82,11 +82,11 @@ export default function TravelForm({
               setTipoServicio(e.target.value);
               if (error) setError("");
             }}
-            className="cursor-pointer w-full p-3 bg-neutral-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20"
+            className="cursor-pointer w-full p-3 bg-neutral-50 border border-neutral-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20"
           >
             <option value="" disabled>Selecciona un servicio</option>
-            <option value="ciudad">Viaje en la ciudad</option>
-            <option value="foraneo">Viaje foráneo</option>
+            <option value="viaje-ciudad">Viaje en la ciudad</option>
+            <option value="viaje-foraneo">Viaje foráneo</option>
             <option value="aeropuerto">Traslado al aeropuerto</option>
             <option value="pet-friendly">Viaje pet friendly</option>
           </select>
@@ -99,7 +99,7 @@ export default function TravelForm({
               setNumeroPasajeros(e.target.value);
               if (error) setError("");
             }}
-            className="cursor-pointer w-full p-3 bg-neutral-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20"
+            className="cursor-pointer w-full p-3 bg-neutral-50 border border-neutral-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20"
           >
             <option value="" disabled>Número de pasajeros</option>
             {[...Array(12)].map((_, index) => (
@@ -118,7 +118,7 @@ export default function TravelForm({
               setTipoViaje(e.target.value);
               if (error) setError("");
             }}
-            className="cursor-pointer w-full p-3 bg-neutral-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20"
+            className="cursor-pointer w-full p-3 bg-neutral-50 border border-neutral-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20"
           >
             <option value="" disabled>Tipo de viaje</option>
             <option value="ida">Solo ida</option>
@@ -127,7 +127,7 @@ export default function TravelForm({
         </div>
   
         {/* Inputs de dirección */}
-        <div className="flex items-center gap-2 p-3 bg-neutral-100 rounded-xl mb-4">
+        <div className="flex items-center gap-2 p-3 bg-neutral-50 border border-neutral-300 rounded-xl mb-4">
           <MapPin className="w-4 h-4 text-gray-500" />
           <input
             ref={origenInputRef}
@@ -143,7 +143,7 @@ export default function TravelForm({
           />
         </div>
   
-        <div className="flex items-center gap-2 p-3 bg-neutral-100 rounded-xl mb-4">
+        <div className="flex items-center gap-2 p-3 bg-neutral-50 border border-neutral-300 rounded-xl mb-4">
           <MapPin className="w-4 h-4 text-gray-500" />
           <input
             ref={destinoInputRef}
@@ -161,7 +161,7 @@ export default function TravelForm({
   
         {/* Fecha y hora */}
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
-          <div className="bg-neutral-100 p-4 rounded-xl w-full sm:w-1/2">
+          <div className="bg-neutral-50 border border-neutral-300 p-4 rounded-xl w-full sm:w-1/2">
             <input
               type="date"
               min={yyyyMMdd}
@@ -174,7 +174,7 @@ export default function TravelForm({
             />
           </div>
   
-          <div className="bg-neutral-100 p-4 rounded-xl w-full sm:w-1/2">
+          <div className="bg-neutral-50 border border-neutral-300 p-4 rounded-xl w-full sm:w-1/2">
             <input
               type="time"
               value={hora}

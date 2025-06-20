@@ -144,8 +144,11 @@ router.post("/send-quote", async (req, res) => {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" style="padding: 12px 0 0;" align="center">
-                                            <a href="${mapsLink}" target="_blank" style="color: #0070ba; font-weight: 600; font-size: 14px; text-decoration: none;">
+                                        <td style="padding: 8px 0; border-bottom: 1px solid #e9ecef;">
+                                            <span style="color: #6c757d; font-size: 14px; font-weight: 500;">RUTA:</span>
+                                        </td>
+                                        <td style="padding: 8px 0;" align="right">
+                                            <a href="${mapsLink}" target="_blank" style="color: #2563EB; font-weight: 600; text-decoration: none;">
                                             Ver ruta en Google Maps
                                             </a>
                                         </td>
@@ -311,8 +314,11 @@ router.post("/send-quote", async (req, res) => {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" style="padding: 12px 0 0;" align="center">
-                                            <a href="${mapsLink}" target="_blank" style="color: #0070ba; font-weight: 600; font-size: 14px; text-decoration: none;">
+                                        <td style="padding: 8px 0; border-bottom: 1px solid #e9ecef;">
+                                            <span style="color: #6c757d; font-size: 14px; font-weight: 500;">RUTA:</span>
+                                        </td>
+                                        <td style="padding: 8px 0;" align="right">
+                                            <a href="${mapsLink}" target="_blank" style="color: #2563EB; font-weight: 600; text-decoration: none;">
                                             Ver ruta en Google Maps
                                             </a>
                                         </td>
