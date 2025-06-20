@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#f5f7fa] px-6 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 px-6 py-16">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Política de Privacidad
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
           tus datos personales escribiéndonos a nuestro correo de contacto:{" "}
           <a
             href="mailto:hectormartilb@gmail.com"
-            className="text-indigo-600 hover:underline"
+            className="text-blue-600 hover:underline"
           >
             hectormartilb@gmail.com
           </a>
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
         <div className="mt-10 text-center">
           <button
             onClick={() => navigate(-1)}
-            className="cursor-pointer inline-block px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition"
+            className="cursor-pointer inline-block px-6 py-2 bg-blue-700 hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition"
           >
             Volver atrás
           </button>

@@ -86,7 +86,7 @@ export default function Form() {
   };
 
   return (
-    <section id="formulario" className="py-16 px-4 bg-neutral-100">
+    <section id="cotizacion" className="py-16 px-4 bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100">
       {" "}
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">

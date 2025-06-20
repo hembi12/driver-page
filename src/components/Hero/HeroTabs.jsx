@@ -30,7 +30,7 @@ export default function HeroTabs({ activeTab }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => {
-                const formSection = document.getElementById("formulario");
+                const formSection = document.getElementById("cotizacion");
                 if (formSection) {
                   formSection.scrollIntoView({ behavior: "smooth" });
                 }
