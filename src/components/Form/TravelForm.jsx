@@ -73,10 +73,23 @@ export default function TravelForm({
 
   return (
     <div className="flex justify-center px-4">
-      <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-xl">
-        {/* Selects */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+        className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-xl"
+        aria-labelledby="form-title"
+      >
+        <h2 id="form-title" className="sr-only">
+          Formulario de cotización
+        </h2>
+
+        {/* Tipo de servicio */}
         <div className="mb-4">
+          <label htmlFor="tipoServicio" className="sr-only">Tipo de servicio</label>
           <select
+            id="tipoServicio"
             value={tipoServicio}
             onChange={(e) => {
               setTipoServicio(e.target.value);
@@ -91,9 +104,12 @@ export default function TravelForm({
             <option value="pet-friendly">Viaje pet friendly</option>
           </select>
         </div>
-  
+
+        {/* Número de pasajeros */}
         <div className="mb-4">
+          <label htmlFor="numeroPasajeros" className="sr-only">Número de pasajeros</label>
           <select
+            id="numeroPasajeros"
             value={numeroPasajeros}
             onChange={(e) => {
               setNumeroPasajeros(e.target.value);
@@ -110,9 +126,12 @@ export default function TravelForm({
             <option value="mas-de-12">Más de 12 pasajeros</option>
           </select>
         </div>
-  
+
+        {/* Tipo de viaje */}
         <div className="mb-4">
+          <label htmlFor="tipoViaje" className="sr-only">Tipo de viaje</label>
           <select
+            id="tipoViaje"
             value={tipoViaje}
             onChange={(e) => {
               setTipoViaje(e.target.value);
@@ -125,12 +144,14 @@ export default function TravelForm({
             <option value="ida-vuelta">Ida y vuelta</option>
           </select>
         </div>
-  
-        {/* Inputs de dirección */}
+
+        {/* Dirección de origen */}
         <div className="flex items-center gap-2 p-3 bg-neutral-50 border border-neutral-300 rounded-xl mb-4">
-          <MapPin className="w-4 h-4 text-gray-500" />
+          <MapPin className="w-4 h-4 text-gray-500" aria-hidden="true" />
+          <label htmlFor="origen" className="sr-only">Dirección de origen</label>
           <input
             ref={origenInputRef}
+            id="origen"
             type="text"
             placeholder={mapsLoaded ? "Dirección de origen" : "Cargando..."}
             value={origen}
@@ -142,11 +163,14 @@ export default function TravelForm({
             className="flex-1 bg-transparent focus:outline-none text-sm disabled:opacity-50"
           />
         </div>
-  
+
+        {/* Dirección de destino */}
         <div className="flex items-center gap-2 p-3 bg-neutral-50 border border-neutral-300 rounded-xl mb-4">
-          <MapPin className="w-4 h-4 text-gray-500" />
+          <MapPin className="w-4 h-4 text-gray-500" aria-hidden="true" />
+          <label htmlFor="destino" className="sr-only">Dirección de destino</label>
           <input
             ref={destinoInputRef}
+            id="destino"
             type="text"
             placeholder={mapsLoaded ? "Dirección de destino" : "Cargando..."}
             value={destino}
@@ -158,11 +182,13 @@ export default function TravelForm({
             className="flex-1 bg-transparent focus:outline-none text-sm disabled:opacity-50"
           />
         </div>
-  
+
         {/* Fecha y hora */}
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
           <div className="bg-neutral-50 border border-neutral-300 p-4 rounded-xl w-full sm:w-1/2">
+            <label htmlFor="fecha" className="sr-only">Fecha</label>
             <input
+              id="fecha"
               type="date"
               min={yyyyMMdd}
               value={fecha}
@@ -173,9 +199,10 @@ export default function TravelForm({
               className="bg-transparent text-sm text-center focus:outline-none w-full"
             />
           </div>
-  
           <div className="bg-neutral-50 border border-neutral-300 p-4 rounded-xl w-full sm:w-1/2">
+            <label htmlFor="hora" className="sr-only">Hora</label>
             <input
+              id="hora"
               type="time"
               value={hora}
               min={fecha === yyyyMMdd ? horaActual : undefined}
@@ -194,16 +221,29 @@ export default function TravelForm({
             />
           </div>
         </div>
-  
+
         {/* Mensajes */}
-        {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
-        {advertenciaHora && <p className="text-red-600 text-sm mb-4">{advertenciaHora}</p>}
-        {exito && <p className="text-green-600 text-sm mb-4">{exito}</p>}
-  
+        {error && (
+          <p role="alert" className="text-red-600 text-sm mb-4">
+            {error}
+          </p>
+        )}
+        {advertenciaHora && (
+          <p role="alert" className="text-red-600 text-sm mb-4">
+            {advertenciaHora}
+          </p>
+        )}
+        {exito && (
+          <p role="alert" className="text-green-600 text-sm mb-4">
+            {exito}
+          </p>
+        )}
+
         {/* Botón */}
         <button
+          type="submit"
+          aria-label="Enviar solicitud de cotización"
           className="w-full bg-blue-700 hover:bg-blue-600 text-white py-3 rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
-          onClick={handleSubmit}
           disabled={enviando || !mapsLoaded}
         >
           {enviando ? (
@@ -215,7 +255,7 @@ export default function TravelForm({
             "Cotizar Viaje"
           )}
         </button>
-      </div>
+      </form>
     </div>
   );
 }

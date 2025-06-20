@@ -14,7 +14,6 @@ export default function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const location = useLocation();
 
-  // Detectar si es una ruta donde se debe mostrar solo el logo + idioma
   const mostrarSoloLogo = [
     "/solicitud-de-cotizacion",
     "/politica-de-privacidad",
@@ -33,9 +32,12 @@ export default function Navbar() {
           HM Mobility
         </Link>
 
-        {/* Solo mostrar idioma si está en una ruta especial */}
         {mostrarSoloLogo ? (
-          <div className="flex items-center gap-1 text-sm font-sm cursor-pointer hover:underline hover:text-neutral-100">
+          <div
+            className="flex items-center gap-1 text-sm font-sm cursor-pointer hover:underline hover:text-neutral-100"
+            aria-label="Idioma actual: Español"
+            title="Idioma actual: Español"
+          >
             <Languages className="w-4 h-4" />
             <span>ES</span>
           </div>
@@ -45,31 +47,55 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-8">
               <ul className="flex items-center gap-6 text-sm font-medium">
                 <li>
-                  <a href="#cotizacion" className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition">
+                  <a
+                    href="#cotizacion"
+                    title="Ir a la sección de cotización"
+                    aria-label="Sección Cotización"
+                    className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition"
+                  >
                     <ClipboardList className="w-4 h-4" />
                     Cotización
                   </a>
                 </li>
                 <li>
-                  <a href="#reseñas" className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition">
+                  <a
+                    href="#reseñas"
+                    title="Ir a la sección de reseñas"
+                    aria-label="Sección Reseñas"
+                    className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition"
+                  >
                     <Star className="w-4 h-4" />
                     Reseñas
                   </a>
                 </li>
                 <li>
-                  <a href="#vehiculos" className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition">
+                  <a
+                    href="#vehiculos"
+                    title="Ir a la sección de vehículos"
+                    aria-label="Sección Vehículos"
+                    className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition"
+                  >
                     <Car className="w-4 h-4" />
                     Vehículos
                   </a>
                 </li>
                 <li>
-                  <a href="#experiencia" className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition">
+                  <a
+                    href="#experiencia"
+                    title="Ir a la sección de experiencia"
+                    aria-label="Sección Experiencia"
+                    className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition"
+                  >
                     <ShieldCheck className="w-4 h-4" />
                     Experiencia
                   </a>
                 </li>
               </ul>
-              <div className="flex items-center gap-1 cursor-pointer hover:underline hover:text-neutral-100 text-sm font-sm">
+              <div
+                className="flex items-center gap-1 cursor-pointer hover:underline hover:text-neutral-100 text-sm font-sm"
+                aria-label="Idioma actual: Español"
+                title="Idioma actual: Español"
+              >
                 <Languages className="w-4 h-4" />
                 <span>ES</span>
               </div>
@@ -79,7 +105,9 @@ export default function Navbar() {
             <button
               className="md:hidden text-white/80 hover:text-neutral-100 transition"
               onClick={() => setMenuAbierto(!menuAbierto)}
-              aria-label="Abrir menú"
+              aria-label="Abrir o cerrar menú de navegación"
+              aria-expanded={menuAbierto}
+              aria-controls="mobile-menu"
             >
               {menuAbierto ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -89,34 +117,62 @@ export default function Navbar() {
 
       {/* Menú móvil desplegable */}
       {!mostrarSoloLogo && menuAbierto && (
-        <div className="md:hidden px-6 pb-6 pt-4">
+        <div id="mobile-menu" className="md:hidden px-6 pt-4">
           <ul className="flex flex-col gap-4 text-sm font-medium">
             <li>
-              <a href="#cotizacion" onClick={() => setMenuAbierto(false)} className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition">
+              <a
+                href="#cotizacion"
+                onClick={() => setMenuAbierto(false)}
+                title="Ir a la sección de cotización"
+                aria-label="Sección Cotización"
+                className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition"
+              >
                 <ClipboardList className="w-4 h-4" />
                 Cotización
               </a>
             </li>
             <li>
-              <a href="#reseñas" onClick={() => setMenuAbierto(false)} className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition">
+              <a
+                href="#reseñas"
+                onClick={() => setMenuAbierto(false)}
+                title="Ir a la sección de reseñas"
+                aria-label="Sección Reseñas"
+                className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition"
+              >
                 <Star className="w-4 h-4" />
                 Reseñas
               </a>
             </li>
             <li>
-              <a href="#vehiculos" onClick={() => setMenuAbierto(false)} className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition">
+              <a
+                href="#vehiculos"
+                onClick={() => setMenuAbierto(false)}
+                title="Ir a la sección de vehículos"
+                aria-label="Sección Vehículos"
+                className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition"
+              >
                 <Car className="w-4 h-4" />
                 Vehículos
               </a>
             </li>
             <li>
-              <a href="#experiencia" onClick={() => setMenuAbierto(false)} className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition">
+              <a
+                href="#experiencia"
+                onClick={() => setMenuAbierto(false)}
+                title="Ir a la sección de experiencia"
+                aria-label="Sección Experiencia"
+                className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition"
+              >
                 <ShieldCheck className="w-4 h-4" />
                 Experiencia
               </a>
             </li>
           </ul>
-          <div className="mt-4 flex items-center gap-2 text-sm text-white/80 hover:underline hover:text-neutral-100 transition">
+          <div
+            className="mt-4 flex items-center gap-2 text-sm text-white/80 hover:underline hover:text-neutral-100 transition"
+            aria-label="Idioma actual: Español"
+            title="Idioma actual: Español"
+          >
             <Languages className="w-4 h-4" />
             <span>ES</span>
           </div>

@@ -1,4 +1,3 @@
-// components/hero/HeroTabs.jsx
 import {
   Calendar,
   CreditCard,
@@ -19,9 +18,12 @@ export default function HeroTabs({ activeTab }) {
   switch (activeTab) {
     case "inicio":
       return (
-        <div className="text-center">
-          <HeartHandshake className="w-20 h-20 text-white mx-auto mb-4" />
-          <h1 className="text-5xl sm:text-6xl font-light text-white drop-shadow-lg mb-4">
+        <section
+          aria-labelledby="hero-title"
+          className="text-center"
+        >
+          <HeartHandshake className="w-20 h-20 text-white mx-auto mb-4" aria-hidden="true" />
+          <h1 id="hero-title" className="text-5xl sm:text-6xl font-light text-white drop-shadow-lg mb-4">
             HM Mobility
           </h1>
           <p className="text-lg sm:text-xl text-white/90 drop-shadow-sm mb-8">
@@ -36,28 +38,30 @@ export default function HeroTabs({ activeTab }) {
                 }
               }}
               className="cursor-pointer bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-full border border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+              aria-label="Reservar ahora"
+              title="Reservar ahora"
             >
               Reservar Ahora <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="mt-6 flex gap-3 justify-center text-sm">
             <div className="flex items-center gap-1 text-white/80">
-              <Clock className="w-4 h-4" />
+              <Clock className="w-4 h-4" aria-hidden="true" />
               Disponible 24/7
             </div>
             <div className="flex items-center gap-1 text-white/80">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden="true" />
               Cobertura nacional
             </div>
           </div>
-        </div>
+        </section>
       );
 
     case "reservar":
       return (
-        <div className="text-center">
-          <Calendar className="w-15 h-15 text-white mx-auto mb-4" />
-          <h2 className="text-3xl font-light text-white mb-6">
+        <section aria-labelledby="reservar-title" className="text-center">
+          <Calendar className="w-15 h-15 text-white mx-auto mb-4" aria-hidden="true" />
+          <h2 id="reservar-title" className="text-3xl font-light text-white mb-6">
             ¿Cómo Reservar?
           </h2>
           <div className="space-y-4 text-white/90">
@@ -79,25 +83,25 @@ export default function HeroTabs({ activeTab }) {
                 desc: "Una vez confirmado, disfruta de tu viaje con nosotros",
               },
             ].map((step, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-700 rounded-full flex items-center justify-center text-sm font-semibold">
+              <article key={i} className="flex items-start gap-3">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-700 rounded-full flex items-center justify-center text-sm font-semibold text-white">
                   {i + 1}
                 </div>
                 <div className="text-left">
-                  <p className="font-medium">{step.title}</p>
+                  <h3 className="font-medium text-white">{step.title}</h3>
                   <p className="text-sm text-white/70">{step.desc}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
       );
 
     case "pagos":
       return (
-        <div className="text-center">
-          <CreditCard className="w-15 h-15 text-white mx-auto mb-4" />
-          <h2 className="text-3xl font-light text-white mb-6">
+        <section aria-labelledby="pagos-title" className="text-center">
+          <CreditCard className="w-15 h-15 text-white mx-auto mb-4" aria-hidden="true" />
+          <h2 id="pagos-title" className="text-3xl font-light text-white mb-6">
             Métodos de Pago
           </h2>
           <div className="grid grid-cols-2 gap-4 mb-6">
@@ -127,7 +131,7 @@ export default function HeroTabs({ activeTab }) {
                 color: "bg-orange-500/30",
               },
             ].map((item, i) => (
-              <div
+              <article
                 key={i}
                 className="bg-black/10 p-4 rounded-xl border border-white/40"
               >
@@ -136,24 +140,24 @@ export default function HeroTabs({ activeTab }) {
                 >
                   {item.icon}
                 </div>
-                <p className="text-white font-medium text-sm">{item.title}</p>
+                <h3 className="text-white font-medium text-sm">{item.title}</h3>
                 <p className="text-white/70 text-xs">{item.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
           <div className="flex justify-center items-center gap-4 mt-4">
-            <img src="/visa.svg" alt="Visa" className="h-10" />
-            <img src="/mastercard.svg" alt="Mastercard" className="h-10" />
-            <img src="/mercadopago.svg" alt="MercadoPago" className="h-10" />
+            <img src="/visa.svg" alt="Pago con tarjeta Visa" className="h-10" />
+            <img src="/mastercard.svg" alt="Pago con tarjeta Mastercard" className="h-10" />
+            <img src="/mercadopago.svg" alt="Pago con MercadoPago" className="h-10" />
           </div>
-        </div>
+        </section>
       );
 
     case "beneficios":
       return (
-        <div className="text-center">
-          <Star className="w-15 h-15 text-white mx-auto mb-4" />
-          <h2 className="text-3xl font-light text-white mb-6">
+        <section aria-labelledby="beneficios-title" className="text-center">
+          <Star className="w-15 h-15 text-white mx-auto mb-4" aria-hidden="true" />
+          <h2 id="beneficios-title" className="text-3xl font-light text-white mb-6">
             Nuestros Beneficios
           </h2>
           <div className="space-y-3">
@@ -183,7 +187,7 @@ export default function HeroTabs({ activeTab }) {
                 desc: "Tarifas transparentes sin sorpresas",
               },
             ].map((item, i) => (
-              <div
+              <article
                 key={i}
                 className="bg-black/10 p-3 rounded-lg border border-white/40 flex items-center gap-3"
               >
@@ -193,13 +197,13 @@ export default function HeroTabs({ activeTab }) {
                   {item.icon}
                 </div>
                 <div className="text-left">
-                  <p className="text-white font-medium text-sm">{item.title}</p>
+                  <h3 className="text-white font-medium text-sm">{item.title}</h3>
                   <p className="text-white/70 text-xs">{item.desc}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
       );
 
     default:

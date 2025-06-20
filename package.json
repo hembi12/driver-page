@@ -19,6 +19,8 @@
     "nodemailer": "^7.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-phone-number-input": "^3.4.12",
     "react-router-dom": "^7.6.2",
     "tailwindcss": "^4.1.10"
