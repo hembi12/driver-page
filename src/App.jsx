@@ -4,16 +4,16 @@ import Hero from "./components/Hero/Hero";
 import Form from "./components/Form/Form";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Vehicles from "./components/Vehicles";
-import Stats from "./components/Stats";
+import Stats from "./components/Stats/Stats";
 import QuoteRequest from "./pages/Quote/QuoteRequest";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import Footer from "./components/Footer";
+// import NotFound from "./pages/NotFound"; // Opcional
 
 export default function App() {
   const location = useLocation();
 
-  // Rutas donde no debe mostrarse el footer
   const ocultarFooter = [
     "/solicitud-de-cotizacion",
     "/politica-de-privacidad",
@@ -23,25 +23,28 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Form />
-              <Testimonials />
-              <Vehicles />
-              <Stats />
-            </>
-          }
-        />
-        <Route path="/solicitud-de-cotizacion" element={<QuoteRequest />} />
-        <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
-        <Route path="/terminos-y-condiciones" element={<TermsAndConditions />} />
-      </Routes>
 
-      {/* Mostrar footer solo si no estamos en páginas especiales */}
+      <main id="main-content">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Form />
+                <Testimonials />
+                <Vehicles />
+                <Stats />
+              </>
+            }
+          />
+          <Route path="/solicitud-de-cotizacion" element={<QuoteRequest />} />
+          <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
+          <Route path="/terminos-y-condiciones" element={<TermsAndConditions />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </main>
+
       {!ocultarFooter && <Footer />}
     </>
   );

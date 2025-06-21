@@ -13,15 +13,32 @@ import {
   Gem,
   Wallet,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function HeroTabs({ activeTab }) {
+  const steps = [
+    {
+      title: "Solicita tu cotización",
+      desc: "Llena el formulario con los detalles de tu viaje",
+    },
+    {
+      title: "Envía tu cotización",
+      desc: "La información será enviada al conductor",
+    },
+    {
+      title: "Confirmación del viaje",
+      desc: "El conductor te contactará para confirmar el costo del viaje",
+    },
+    {
+      title: "¡Listo para viajar!",
+      desc: "Una vez confirmado, disfruta de tu viaje con nosotros",
+    },
+  ];
+
   switch (activeTab) {
     case "inicio":
       return (
-        <section
-          aria-labelledby="hero-title"
-          className="text-center"
-        >
+        <section aria-labelledby="hero-title" className="text-center">
           <HeartHandshake className="w-20 h-20 text-white mx-auto mb-4" aria-hidden="true" />
           <h1 id="hero-title" className="text-5xl sm:text-6xl font-light text-white drop-shadow-lg mb-4">
             HM Mobility
@@ -60,30 +77,29 @@ export default function HeroTabs({ activeTab }) {
     case "reservar":
       return (
         <section aria-labelledby="reservar-title" className="text-center">
-          <Calendar className="w-15 h-15 text-white mx-auto mb-4" aria-hidden="true" />
+          <Helmet>
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "name": "Cómo reservar un viaje con HM Mobility",
+                "description": "Sigue estos pasos para reservar un viaje privado con nosotros.",
+                "step": steps.map((step, index) => ({
+                  "@type": "HowToStep",
+                  "position": index + 1,
+                  "name": step.title,
+                  "text": step.desc,
+                })),
+              })}
+            </script>
+          </Helmet>
+          <Calendar className="w-16 h-16 text-green-400 mx-auto mb-4" aria-hidden="true" />
           <h2 id="reservar-title" className="text-3xl font-light text-white mb-6">
             ¿Cómo Reservar?
           </h2>
           <div className="space-y-4 text-white/90">
-            {[
-              {
-                title: "Solicita tu cotización",
-                desc: "Llena el formulario con los detalles de tu viaje",
-              },
-              {
-                title: "Envia tu cotización",
-                desc: "La información será enviada al conductor",
-              },
-              {
-                title: "Confirmación del viaje",
-                desc: "El conductor te contactará para confirmar el costo del viaje",
-              },
-              {
-                title: "¡Listo para viajar!",
-                desc: "Una vez confirmado, disfruta de tu viaje con nosotros",
-              },
-            ].map((step, i) => (
-              <article key={i} className="flex items-start gap-3">
+            {steps.map((step, i) => (
+              <article key={i} role="group" className="flex items-start gap-3">
                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-700 rounded-full flex items-center justify-center text-sm font-semibold text-white">
                   {i + 1}
                 </div>
@@ -100,7 +116,7 @@ export default function HeroTabs({ activeTab }) {
     case "pagos":
       return (
         <section aria-labelledby="pagos-title" className="text-center">
-          <CreditCard className="w-15 h-15 text-white mx-auto mb-4" aria-hidden="true" />
+          <CreditCard className="w-16 h-16 text-blue-400 mx-auto mb-4" aria-hidden="true" />
           <h2 id="pagos-title" className="text-3xl font-light text-white mb-6">
             Métodos de Pago
           </h2>
@@ -146,9 +162,24 @@ export default function HeroTabs({ activeTab }) {
             ))}
           </div>
           <div className="flex justify-center items-center gap-4 mt-4">
-            <img src="/visa.svg" alt="Pago con tarjeta Visa" className="h-10" />
-            <img src="/mastercard.svg" alt="Pago con tarjeta Mastercard" className="h-10" />
-            <img src="/mercadopago.svg" alt="Pago con MercadoPago" className="h-10" />
+            <img
+              src="/visa.svg"
+              alt="Pago con tarjeta Visa"
+              className="h-10"
+              loading="lazy"
+            />
+            <img
+              src="/mastercard.svg"
+              alt="Pago con tarjeta Mastercard"
+              className="h-10"
+              loading="lazy"
+            />
+            <img
+              src="/mercadopago.svg"
+              alt="Pago con MercadoPago"
+              className="h-10"
+              loading="lazy"
+            />
           </div>
         </section>
       );
@@ -156,7 +187,7 @@ export default function HeroTabs({ activeTab }) {
     case "beneficios":
       return (
         <section aria-labelledby="beneficios-title" className="text-center">
-          <Star className="w-15 h-15 text-white mx-auto mb-4" aria-hidden="true" />
+          <Star className="w-16 h-16 text-yellow-400 mx-auto mb-4" aria-hidden="true" />
           <h2 id="beneficios-title" className="text-3xl font-light text-white mb-6">
             Nuestros Beneficios
           </h2>
@@ -189,6 +220,7 @@ export default function HeroTabs({ activeTab }) {
             ].map((item, i) => (
               <article
                 key={i}
+                role="group"
                 className="bg-black/10 p-3 rounded-lg border border-white/40 flex items-center gap-3"
               >
                 <div

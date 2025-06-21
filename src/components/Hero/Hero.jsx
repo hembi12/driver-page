@@ -79,19 +79,30 @@ export default function Hero() {
           name="description"
           content="Reserva traslados cómodos, puntuales y pet friendly con HM Mobility en CDMX y más allá."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "HM Mobility",
+            "image": "https://tusitio.com/hero-bg.webp",
+            "description": "Servicios privados, traslados al aeropuerto, viajes pet friendly y más.",
+            "url": "https://tusitio.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ciudad de México",
+              "addressCountry": "MX"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "CDMX y alrededores"
+            },
+            "serviceType": "Transporte privado y traslados"
+          })}
+        </script>
       </Helmet>
 
       <div className="max-w-lg w-full px-6 sm:px-10 py-8 rounded-3xl bg-black/30 backdrop-blur-md shadow-xl border border-white/20">
         <div className="min-h-[450px] flex flex-col items-center justify-center text-center space-y-6">
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-              Viaja cómodo, seguro y a tiempo
-            </h1>
-            <p className="text-white/90 text-sm sm:text-base max-w-sm mx-auto">
-              Servicios privados, traslados al aeropuerto, viajes pet friendly y más.
-            </p>
-          </div>
-
           <div className="w-full transition-all duration-300 ease-out">
             <HeroTabs activeTab={activeTab} onTabChange={handleInteraction} />
           </div>
