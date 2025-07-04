@@ -164,19 +164,19 @@ export default function HeroTabs({ activeTab }) {
           </div>
           <div className="flex justify-center items-center gap-4 mt-4">
             <img
-              src="/visa.svg"
+              src="images/visa.svg"
               alt="Pago con tarjeta Visa"
               className="h-10"
               loading="lazy"
             />
             <img
-              src="/mastercard.svg"
+              src="images/mastercard.svg"
               alt="Pago con tarjeta Mastercard"
               className="h-10"
               loading="lazy"
             />
             <img
-              src="/mercadopago.svg"
+              src="images/mercadopago.svg"
               alt="Pago con MercadoPago"
               className="h-10"
               loading="lazy"

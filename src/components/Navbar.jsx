@@ -8,7 +8,7 @@ import {
   Languages,
   Menu,
   X,
-  HelpCircle, // ✅ NUEVO ícono
+  HelpCircle, 
 } from "lucide-react";
 
 export default function Navbar() {
@@ -66,7 +66,6 @@ export default function Navbar() {
                     Experiencia
                   </a>
                 </li>
-                {/* ✅ NUEVO ENLACE FAQ */}
                 <li>
                   <a href="#preguntas-frecuentes" className="flex items-center gap-1 hover:underline hover:text-neutral-100 transition">
                     <HelpCircle className="w-4 h-4" />
@@ -122,7 +121,6 @@ export default function Navbar() {
                 Experiencia
               </a>
             </li>
-            {/* ✅ FAQ móvil */}
             <li>
               <a href="#preguntas-frecuentes" onClick={() => setMenuAbierto(false)} className="flex items-center gap-2 hover:underline hover:text-neutral-100 transition">
                 <HelpCircle className="w-4 h-4" />

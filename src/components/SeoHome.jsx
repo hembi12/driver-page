@@ -88,6 +88,41 @@ export default function SeoHome() {
           ]
         })}
       </script>
+
+      {/* Vehicles - ItemList */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Vehículos HM Mobility",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Vehicle",
+                "name": "Suzuki Ertiga Plata",
+                "modelDate": "2022",
+                "description":
+                  "Camioneta cómoda y espaciosa, ideal para traslados familiares o de grupos. Color plata, modelo 2022.",
+                "image": "https://tu-dominio.com/ertigaplata.webp"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Vehicle",
+                "name": "Suzuki Ertiga Blanca",
+                "modelDate": "2019",
+                "description":
+                  "Vehículo versátil y confiable, perfecto para viajes largos o servicios privados. Color blanco, modelo 2019.",
+                "image": "https://tu-dominio.com/ertigablanca.webp"
+              }
+            }
+          ]
+        })}
+      </script>
     </Helmet>
   );
 }

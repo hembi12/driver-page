@@ -67,7 +67,7 @@ export default function Hero() {
       id="inicio"
       className={`h-screen flex items-center justify-center px-4 sm:px-6 transition-colors duration-1000 ${
         showBackground
-          ? "bg-[url('/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
+          ? "bg-[url('images/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
           : "bg-black"
       }`}
       aria-label="Sección principal de bienvenida"

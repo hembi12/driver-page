@@ -83,7 +83,7 @@ export default function Testimonials() {
         aria-label="Testimonios de clientes"
         className={`min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 transition-colors duration-1000 ${
           showBackground
-            ? "bg-[url('/palace2.webp')] bg-cover bg-center bg-no-repeat bg-fixed"
+            ? "bg-[url('images/palace2.webp')] bg-cover bg-center bg-no-repeat bg-fixed"
             : "bg-black"
         }`}
       >
@@ -94,7 +94,7 @@ export default function Testimonials() {
         >
           <h2
             id="testimonials-heading"
-            className="text-white text-2xl sm:text-3xl font-bold mb-4 text-center"
+            className="text-white text-4xl sm:text-5xl sm:text-3xl font-bold mb-4 text-center"
           >
             Lo que dicen nuestros clientes
           </h2>
