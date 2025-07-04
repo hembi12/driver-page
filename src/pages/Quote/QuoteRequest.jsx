@@ -14,48 +14,64 @@ import QuoteForm from "./QuoteForm";
 export default function QuoteRequest() {
   const datos = JSON.parse(localStorage.getItem("cotizacion"));
   const mapRef = useRef(null);
+  const mapContainerRef = useRef(null);
   const [mapInitialized, setMapInitialized] = useState(false);
 
   useEffect(() => {
     if (!datos || mapInitialized) return;
 
-    const loader = new Loader({
-      apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-      version: "weekly",
-      libraries: ["places"],
-      language: "es",
-      region: "MX",
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && mapRef.current && !mapInitialized) {
+          const loader = new Loader({
+            apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+            version: "weekly",
+            libraries: ["places"],
+            language: "es",
+            region: "MX",
+          });
 
-    loader.load().then(() => {
-      if (!window.google || !mapRef.current) return;
+          loader.load().then(() => {
+            if (!window.google) return;
 
-      const map = new window.google.maps.Map(mapRef.current, {
-        zoom: 7,
-        center: { lat: 19.4326, lng: -99.1332 },
-      });
+            const map = new window.google.maps.Map(mapRef.current, {
+              zoom: 7,
+              center: { lat: 19.4326, lng: -99.1332 },
+            });
 
-      const directionsService = new window.google.maps.DirectionsService();
-      const directionsRenderer = new window.google.maps.DirectionsRenderer();
-      directionsRenderer.setMap(map);
+            const directionsService = new window.google.maps.DirectionsService();
+            const directionsRenderer = new window.google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
 
-      directionsService.route(
-        {
-          origin: datos.origen,
-          destination: datos.destino,
-          travelMode: window.google.maps.TravelMode.DRIVING,
-        },
-        (result, status) => {
-          if (status === "OK") {
-            directionsRenderer.setDirections(result);
-          } else {
-            console.error("Error al obtener la ruta:", status);
-          }
+            directionsService.route(
+              {
+                origin: datos.origen,
+                destination: datos.destino,
+                travelMode: window.google.maps.TravelMode.DRIVING,
+              },
+              (result, status) => {
+                if (status === "OK") {
+                  directionsRenderer.setDirections(result);
+                } else {
+                  console.error("Error al obtener la ruta:", status);
+                }
+              }
+            );
+
+            setMapInitialized(true);
+          });
+
+          observer.disconnect();
         }
-      );
+      },
+      { threshold: 0.1 }
+    );
 
-      setMapInitialized(true);
-    });
+    if (mapContainerRef.current) {
+      observer.observe(mapContainerRef.current);
+    }
+
+    return () => observer.disconnect();
   }, [datos, mapInitialized]);
 
   if (!datos) {
@@ -151,11 +167,13 @@ export default function QuoteRequest() {
             </ul>
           </div>
 
-          {/* Mapa */}
+          {/* Mapa con lazy load */}
           <div
-            ref={mapRef}
+            ref={mapContainerRef}
             className="w-full lg:w-1/2 h-[400px] rounded-2xl border border-gray-300 shadow-lg"
-          />
+          >
+            <div ref={mapRef} className="w-full h-full rounded-2xl" />
+          </div>
         </div>
 
         {/* Formulario de contacto */}

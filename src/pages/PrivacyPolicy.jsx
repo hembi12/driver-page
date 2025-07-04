@@ -1,13 +1,25 @@
 "use client";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function PrivacyPolicy() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 px-6 py-16">
+    <main
+      className="min-h-screen bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 px-6 py-16"
+      aria-labelledby="privacy-title"
+    >
+      <Helmet>
+        <title>Política de Privacidad | HM Mobility</title>
+        <meta
+          name="description"
+          content="Conoce cómo HM Mobility protege tu información personal. Nuestra política de privacidad garantiza la confidencialidad y seguridad de tus datos."
+        />
+      </Helmet>
+
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 id="privacy-title" className="text-3xl font-bold text-gray-900 mb-6">
           Política de Privacidad
         </h1>
 
@@ -25,28 +37,18 @@ export default function PrivacyPolicy() {
           <li>Nombre completo</li>
           <li>Correo electrónico</li>
           <li>Número de teléfono</li>
-          <li>
-            Tipo de servicio y viaje
-          </li>
-          <li>
-            Número de pasajeros
-          </li>
-          <li>
-            Dirección de origen y destino
-          </li>
-          <li>
-            Fecha y hora del servicio
-          </li>
-          <li>
-            Aceptación de la politica de privacidad
-          </li>
+          <li>Tipo de servicio y viaje</li>
+          <li>Número de pasajeros</li>
+          <li>Dirección de origen y destino</li>
+          <li>Fecha y hora del servicio</li>
+          <li>Aceptación de la política de privacidad</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
           2. Uso de la información
         </h2>
         <p className="text-gray-700 mb-4">
-          Utilizamos tus datos exclusivamente para contactar contigo para coordinar el
+          Utilizamos tus datos exclusivamente para contactar contigo y coordinar el
           servicio solicitado.
         </p>
 
@@ -64,7 +66,7 @@ export default function PrivacyPolicy() {
         </h2>
         <p className="text-gray-700 mb-4">
           Puedes solicitar en cualquier momento la modificación o eliminación de
-          tus datos personales escribiéndonos a nuestro correo de contacto:{" "}
+          tus datos personales escribiéndonos a:{" "}
           <a
             href="mailto:hectormartilb@gmail.com"
             className="text-blue-700 hover:text-blue-600 hover:underline"
@@ -87,7 +89,6 @@ export default function PrivacyPolicy() {
           Última actualización: {new Date().toLocaleDateString("es-MX")}
         </p>
 
-        {/* Botón volver atrás */}
         <div className="mt-10 text-center">
           <button
             onClick={() => navigate(-1)}
@@ -97,6 +98,6 @@ export default function PrivacyPolicy() {
           </button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

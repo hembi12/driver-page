@@ -155,8 +155,18 @@ export default function QuoteForm() {
             className="text-sm text-gray-700 leading-snug"
           >
             Acepto la{" "}
-            <a href="/privacy-policy" className="text-blue-700 hover:text-blue-600 hover:underline">
+            <a
+              href="/politica-de-privacidad"
+              className="text-blue-700 hover:text-blue-600 hover:underline"
+            >
               política de privacidad
+            </a>{" "}
+            y los{" "}
+            <a
+              href="/terminos-y-condiciones"
+              className="text-blue-700 hover:text-blue-600 hover:underline"
+            >
+              términos y condiciones
             </a>
           </label>
         </div>

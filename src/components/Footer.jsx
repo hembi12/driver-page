@@ -51,7 +51,7 @@ export default function Footer() {
             href="/politica-de-privacidad"
             className="hover:text-neutral-100 hover:underline transition"
           >
-            Aviso de privacidad
+            Política de privacidad
           </a>
           <a
             href="/terminos-y-condiciones"
