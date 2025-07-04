@@ -40,7 +40,7 @@ export default function HeroTabs({ activeTab }) {
       return (
         <section aria-labelledby="hero-title" className="text-center">
           <HeartHandshake className="w-20 h-20 text-white mx-auto mb-4" aria-hidden="true" />
-          <h1 id="hero-title" className="text-5xl sm:text-6xl font-light text-white drop-shadow-lg mb-4">
+          <h1 id="hero-title" className="text-5xl font-light text-white drop-shadow-lg mb-4">
             HM Mobility
           </h1>
           <p className="text-lg sm:text-xl text-white/90 drop-shadow-sm mb-8">
@@ -95,7 +95,7 @@ export default function HeroTabs({ activeTab }) {
           </Helmet>
 
           <Calendar className="w-16 h-16 text-green-400 mx-auto mb-4" aria-hidden="true" />
-          <h2 id="reservar-title" className="text-3xl font-light text-white mb-6">
+          <h2 id="reservar-title" className="text-4xl font-light text-white mb-6">
             ¿Cómo Reservar?
           </h2>
           <div className="space-y-4 text-white/90">
@@ -118,7 +118,7 @@ export default function HeroTabs({ activeTab }) {
       return (
         <section aria-labelledby="pagos-title" className="text-center">
           <CreditCard className="w-16 h-16 text-blue-400 mx-auto mb-4" aria-hidden="true" />
-          <h2 id="pagos-title" className="text-3xl font-light text-white mb-6">
+          <h2 id="pagos-title" className="text-4xl font-light text-white mb-6">
             Métodos de Pago
           </h2>
           <div className="grid grid-cols-2 gap-4 mb-6">
@@ -189,7 +189,7 @@ export default function HeroTabs({ activeTab }) {
       return (
         <section aria-labelledby="beneficios-title" className="text-center">
           <Star className="w-16 h-16 text-yellow-400 mx-auto mb-4" aria-hidden="true" />
-          <h2 id="beneficios-title" className="text-3xl font-light text-white mb-6">
+          <h2 id="beneficios-title" className="text-4xl font-light text-white mb-6">
             Nuestros Beneficios
           </h2>
           <div className="space-y-3">

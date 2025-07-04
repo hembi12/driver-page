@@ -1,6 +1,6 @@
 "use client";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoPrivacy from "../components/SeoPrivacy"; // ✅ usa mismo casing que el archivo real
 
 export default function PrivacyPolicy() {
   const navigate = useNavigate();
@@ -10,16 +10,10 @@ export default function PrivacyPolicy() {
       className="min-h-screen bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 px-6 py-16"
       aria-labelledby="privacy-title"
     >
-      <Helmet>
-        <title>Política de Privacidad | HM Mobility</title>
-        <meta
-          name="description"
-          content="Conoce cómo HM Mobility protege tu información personal. Nuestra política de privacidad garantiza la confidencialidad y seguridad de tus datos."
-        />
-      </Helmet>
+      <SeoPrivacy /> {/* ✅ SEO modular */}
 
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
-        <h1 id="privacy-title" className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 id="privacy-title" className="text-4xl font-bold text-gray-900 mb-6">
           Política de Privacidad
         </h1>
 

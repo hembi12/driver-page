@@ -37,7 +37,7 @@ export default function FAQ() {
       aria-labelledby="faq-title"
       className="py-20 px-4 bg-white text-gray-800 border-t border-gray-200"
     >
-      <div className="max-w-4xl mx-auto text-center mb-12">
+      <div className="max-w-6xl mx-auto px-4 text-center mb-4">
         <h2
           id="faq-title"
           className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-4"

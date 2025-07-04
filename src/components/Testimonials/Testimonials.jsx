@@ -94,7 +94,7 @@ export default function Testimonials() {
         >
           <h2
             id="testimonials-heading"
-            className="text-white text-4xl sm:text-5xl sm:text-3xl font-bold mb-4 text-center"
+            className="text-white text-4xl sm:text-5xl font-bold mb-4 text-center"
           >
             Lo que dicen nuestros clientes
           </h2>

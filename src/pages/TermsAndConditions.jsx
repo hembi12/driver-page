@@ -19,7 +19,7 @@ export default function TermsAndConditions() {
       </Helmet>
 
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
-        <h1 id="terms-title" className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 id="terms-title" className="text-4xl font-bold text-gray-900 mb-6">
           Términos y Condiciones
         </h1>
 

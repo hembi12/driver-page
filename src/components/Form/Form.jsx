@@ -102,7 +102,7 @@ export default function Form() {
       </Helmet>
 
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 id="cotizacion-title" className="text-3xl font-bold text-gray-900 mb-2">
+        <h2 id="cotizacion-title" className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
           Solicita tu cotización
         </h2>
         <p className="text-gray-600 text-lg">

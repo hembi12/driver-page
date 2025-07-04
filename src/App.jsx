@@ -9,7 +9,7 @@ import QuoteRequest from "./pages/Quote/QuoteRequest";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import Footer from "./components/Footer";
-import SeoHome from "./components/SeoHome"; // ✅ SEO para la home
+import SeoHome from "./components/SeoHome"; 
 import FAQ from "./components/FAQ";
 // import NotFound from "./pages/NotFound"; // Opcional
 
