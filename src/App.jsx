@@ -9,6 +9,8 @@ import QuoteRequest from "./pages/Quote/QuoteRequest";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import Footer from "./components/Footer";
+import SeoHome from "./components/SeoHome"; // ✅ SEO para la home
+import FAQ from "./components/FAQ";
 // import NotFound from "./pages/NotFound"; // Opcional
 
 export default function App() {
@@ -30,11 +32,13 @@ export default function App() {
             path="/"
             element={
               <>
+                <SeoHome /> 
                 <Hero />
                 <Form />
                 <Testimonials />
                 <Vehicles />
                 <Stats />
+                <FAQ />
               </>
             }
           />

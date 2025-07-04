@@ -94,10 +94,14 @@ export default function Testimonials() {
         >
           <h2
             id="testimonials-heading"
-            className="text-white text-2xl sm:text-3xl font-bold mb-10 text-center"
+            className="text-white text-2xl sm:text-3xl font-bold mb-4 text-center"
           >
             Lo que dicen nuestros clientes
           </h2>
+          <p className="text-center text-white/80 text-base max-w-2xl mx-auto mb-10">
+            Cada testimonio refleja la experiencia real de quienes confiaron en
+            nosotros. Gracias por ser parte de este camino.
+          </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {testimonios

@@ -10,15 +10,16 @@ import {
   Smile,
 } from "lucide-react";
 
-const iconos = [
-  <ThumbsUp className="w-6 h-6 text-green-400 mx-auto" />, // Calificación promedio
-  <Star className="w-6 h-6 text-yellow-400 mx-auto" />, // Valoraciones
-  <Clock className="w-6 h-6 text-blue-400 mx-auto" />, // Puntualidad
-  <Map className="w-6 h-6 text-purple-400 mx-auto" />, // KM recorridos
-  <ShieldCheck className="w-6 h-6 text-cyan-400 mx-auto" />, // Trayectos seguros
-  <Award className="w-6 h-6 text-pink-400 mx-auto" />, // Experiencia
-  <Send className="w-6 h-6 text-orange-400 mx-auto" />, // Viajes completados
-  <Smile className="w-6 h-6 text-teal-400 mx-auto" />, // Clientes satisfechos
+// Icons como componentes, no JSX directo
+const Iconos = [
+  { Icon: ThumbsUp, color: "text-green-400" },
+  { Icon: Star, color: "text-yellow-400" },
+  { Icon: Clock, color: "text-blue-400" },
+  { Icon: Map, color: "text-purple-400" },
+  { Icon: ShieldCheck, color: "text-cyan-400" },
+  { Icon: Award, color: "text-pink-400" },
+  { Icon: Send, color: "text-orange-400" },
+  { Icon: Smile, color: "text-teal-400" },
 ];
 
 const datos = [
@@ -41,11 +42,11 @@ export default function StatsGrid() {
         prev.map((actual, i) => {
           const meta = datos[i].valor;
           if (actual >= meta) return meta;
-          const incremento = Math.ceil(meta / 60);
+          const incremento = Math.ceil(meta / 80); // más suave
           return Math.min(actual + incremento, meta);
         })
       );
-    }, 30);
+    }, 50); // más suave que 30ms
 
     return () => clearInterval(interval);
   }, []);
@@ -62,30 +63,37 @@ export default function StatsGrid() {
     <div className="max-w-6xl w-full px-4 sm:px-10 py-10 rounded-3xl bg-black/30 backdrop-blur-md shadow-xl border border-white/20">
       <h2
         id="stats-title"
-        className="text-white text-2xl sm:text-3xl font-bold mb-10 text-center"
+        className="text-white text-4xl sm:text-5xl font-bold mb-4 text-center"
       >
         Nuestra Experiencia Habla
       </h2>
-
+      <p className="text-center text-white/80 text-base max-w-2xl mx-auto mb-10">
+        Cada número representa nuestro compromiso con la excelencia, la seguridad y la satisfacción de nuestros clientes.
+      </p>
+  
       <div
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
         role="list"
       >
-        {datos.map((stat, i) => (
-          <div
-            key={i}
-            role="listitem"
-            className="bg-black/10 text-white border border-white/40 p-6 rounded-xl text-center"
-          >
-            <div>{iconos[i]}</div>
-            <p className="text-2xl font-bold text-neutral-100 mt-2">
-              {formatNumber(contadores[i], i)}
-            </p>
-            <p className="text-sm mt-2 text-white/80 font-medium">
-              {stat.etiqueta}
-            </p>
-          </div>
-        ))}
+        {datos.map((stat, i) => {
+          const { Icon, color } = Iconos[i];
+          return (
+            <div
+              key={i}
+              role="listitem"
+              aria-label={`${formatNumber(contadores[i], i)} ${stat.etiqueta}`}
+              className="bg-black/10 text-white border border-white/40 p-6 rounded-xl text-center"
+            >
+              <Icon className={`w-6 h-6 mx-auto ${color}`} />
+              <p className="text-2xl font-bold text-neutral-100 mt-2">
+                {formatNumber(contadores[i], i)}
+              </p>
+              <p className="text-sm mt-2 text-white/80 font-medium">
+                {stat.etiqueta}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

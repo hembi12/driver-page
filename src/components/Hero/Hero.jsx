@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import HeroTabs from "./HeroTabs";
-import { Helmet } from "react-helmet-async";
 
 const tabs = [
   { id: "inicio", label: "Inicio" },
@@ -68,39 +67,11 @@ export default function Hero() {
       id="inicio"
       className={`h-screen flex items-center justify-center px-4 sm:px-6 transition-colors duration-1000 ${
         showBackground
-          ? "bg-[url('/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-fixed"
+          ? "bg-[url('/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
           : "bg-black"
       }`}
       aria-label="Sección principal de bienvenida"
     >
-      <Helmet>
-        <title>HM Mobility | Viajes Privados y Traslados en CDMX</title>
-        <meta
-          name="description"
-          content="Reserva traslados cómodos, puntuales y pet friendly con HM Mobility en CDMX y más allá."
-        />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "HM Mobility",
-            "image": "https://tusitio.com/hero-bg.webp",
-            "description": "Servicios privados, traslados al aeropuerto, viajes pet friendly y más.",
-            "url": "https://tusitio.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Ciudad de México",
-              "addressCountry": "MX"
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "CDMX y alrededores"
-            },
-            "serviceType": "Transporte privado y traslados"
-          })}
-        </script>
-      </Helmet>
-
       <div className="max-w-lg w-full px-6 sm:px-10 py-8 rounded-3xl bg-black/30 backdrop-blur-md shadow-xl border border-white/20">
         <div className="min-h-[450px] flex flex-col items-center justify-center text-center space-y-6">
           <div className="w-full transition-all duration-300 ease-out">

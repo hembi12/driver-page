@@ -93,6 +93,7 @@ export default function HeroTabs({ activeTab }) {
               })}
             </script>
           </Helmet>
+
           <Calendar className="w-16 h-16 text-green-400 mx-auto mb-4" aria-hidden="true" />
           <h2 id="reservar-title" className="text-3xl font-light text-white mb-6">
             ¿Cómo Reservar?
