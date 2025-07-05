@@ -1,6 +1,7 @@
 "use client";
+
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoTerms from "../seo/SeoTerms"; // asegúrate que la ruta sea correcta
 
 export default function TermsAndConditions() {
   const navigate = useNavigate();
@@ -10,13 +11,7 @@ export default function TermsAndConditions() {
       className="min-h-screen bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 px-6 py-16"
       aria-labelledby="terms-title"
     >
-      <Helmet>
-        <title>Términos y Condiciones | HM Mobility</title>
-        <meta
-          name="description"
-          content="Conoce los términos y condiciones de uso del servicio de transporte privado de HM Mobility. Lee nuestras políticas antes de reservar."
-        />
-      </Helmet>
+      <SeoTerms />
 
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
         <h1 id="terms-title" className="text-4xl font-bold text-gray-900 mb-6">
