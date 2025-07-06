@@ -18,8 +18,10 @@ export default function QuoteForm() {
   const [detallesViaje, setDetallesViaje] = useState(null);
 
   useEffect(() => {
-    const datos = JSON.parse(localStorage.getItem("cotizacion"));
-    setDetallesViaje(datos);
+    if (typeof window !== "undefined") {
+      const datos = JSON.parse(localStorage.getItem("cotizacion"));
+      setDetallesViaje(datos);
+    }
   }, []);
 
   const handleSubmit = async (e) => {
@@ -53,11 +55,14 @@ export default function QuoteForm() {
     };
 
     try {
-      const res = await fetch("http://localhost:3001/send-quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(datosContacto),
-      });
+      const res = await fetch(
+        import.meta.env.VITE_API_URL + "/send-quote",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(datosContacto),
+        }
+      );
 
       const data = await res.json();
 
@@ -84,7 +89,7 @@ export default function QuoteForm() {
         Información de contacto
       </h2>
 
-      <form className="space-y-4" onSubmit={handleSubmit}>
+      <form className="space-y-4" onSubmit={handleSubmit} aria-label="Formulario de cotización">
         <div className="bg-neutral-50 border border-neutral-300 p-3 rounded-xl">
           <input
             type="text"
@@ -96,6 +101,7 @@ export default function QuoteForm() {
             }}
             className="w-full bg-transparent focus:outline-none text-sm"
             placeholder="Nombre completo"
+            required
           />
         </div>
 
@@ -110,6 +116,7 @@ export default function QuoteForm() {
             }}
             className="w-full bg-transparent focus:outline-none text-sm"
             placeholder="Correo electrónico"
+            required
           />
         </div>
 
@@ -174,7 +181,7 @@ export default function QuoteForm() {
         {error && <p className="text-red-600 text-sm">{error}</p>}
         {exito && (
           <p className="text-green-600 text-sm">
-            ¡Tu cotización fue enviada correctamente!
+            ¡Tu cotización fue enviada! Te contactaremos muy pronto.
           </p>
         )}
 
@@ -206,9 +213,9 @@ export default function QuoteForm() {
             </p>
             <p className="text-sm text-gray-500 mb-6">
               Tu número de confirmación es:{" "}
-              <span className="font-mono font-semibold text-gray-800">
+              <code className="font-mono font-semibold text-gray-800">
                 {numeroConfirmacion}
-              </span>
+              </code>
             </p>
             <button
               onClick={() => setMostrarModal(false)}
