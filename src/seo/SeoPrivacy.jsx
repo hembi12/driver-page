@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "@dr.pogodin/react-helmet";
 
 export default function SeoPrivacy() {
   return (
@@ -8,17 +8,17 @@ export default function SeoPrivacy() {
         name="description"
         content="Conoce cómo HM Mobility protege tu información personal. Nuestra política de privacidad garantiza la confidencialidad y seguridad de tus datos."
       />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="noindex, follow" />
       <link rel="canonical" href="https://tu-dominio.com/privacy-policy" />
 
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "name": "Política de Privacidad",
-          "description":
+          name: "Política de Privacidad",
+          description:
             "Conoce cómo HM Mobility protege tu información personal. Nuestra política de privacidad garantiza la confidencialidad y seguridad de tus datos.",
-          "url": "https://tu-dominio.com/privacy-policy"
+          url: "https://tu-dominio.com/privacy-policy",
         })}
       </script>
     </Helmet>
