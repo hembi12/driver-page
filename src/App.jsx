@@ -19,7 +19,7 @@ export default function App() {
   const ocultarFooter = [
     "/solicitud-de-cotizacion",
     "/politica-de-privacidad",
-    "/terminos-y-condiciones",
+    "/terminos-condiciones",
   ].includes(location.pathname);
 
   return (
