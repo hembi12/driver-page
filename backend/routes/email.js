@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
@@ -392,7 +391,7 @@ router.post("/send-quote", async (req, res) => {
     // Enviar al cliente
     await transporter.sendMail({
       from: `"Sistema HM Mobility" <${process.env.EMAIL_USER}>`,
-      to: "hectormartilb@gmail.com",
+      to: "marcodigitaltv@gmail.com",
       subject: `Nueva cotización: ${nombre} - ${numeroConfirmacion}`,
       html: htmlInterno,
     });

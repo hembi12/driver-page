@@ -3,48 +3,48 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
   <url>
-    <loc>https://tu-dominio.com/</loc>
+    <loc>https://hmmobility.services/</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/#cotizacion</loc>
+    <loc>https://hmmobility.services/#cotizacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/#reseñas</loc>
+    <loc>https://hmmobility.services/#reseñas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/#vehiculos</loc>
+    <loc>https://hmmobility.services/#vehiculos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/#experiencia</loc>
+    <loc>https://hmmobility.services/#experiencia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/#faq</loc>
+    <loc>https://hmmobility.services/#faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/solicitud-de-cotizacion</loc>
+    <loc>https://hmmobility.services/solicitud-de-cotizacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/politica-de-privacidad</loc>
+    <loc>https://hmmobility.services/politica-de-privacidad</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.com/terminos-y-condiciones</loc>
+    <loc>https://hmmobility.services/terminos-y-condiciones</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

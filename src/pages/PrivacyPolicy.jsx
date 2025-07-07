@@ -8,12 +8,12 @@ export default function PrivacyPolicy() {
   return (
     <main
       className="min-h-screen bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100 px-6 py-16"
-      aria-labelledby="privacy-title"
+      aria-labelledby="politica-de-privacidad"
     >
       <SeoPrivacy /> 
 
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
-        <h1 id="privacy-title" className="text-4xl font-bold text-gray-900 mb-6">
+        <h1 id="politica-de-privacidad" className="text-4xl font-bold text-gray-900 mb-6">
           Política de Privacidad
         </h1>
 

@@ -9,7 +9,7 @@ export default function SeoQuote() {
         content="Solicita una cotización rápida y personalizada para tu próximo traslado con HM Mobility. Servicio privado, seguro y disponible 24/7 en México."
       />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://tu-dominio.com/solicitud-de-cotizacion" />
+      <link rel="canonical" href="https://hmmobility.services/solicitud-de-cotizacion" />
 
       {/* JSON-LD: Cotización como WebPage */}
       <script type="application/ld+json">
@@ -17,13 +17,13 @@ export default function SeoQuote() {
           "@context": "https://schema.org",
           "@type": "WebPage",
           name: "Cotización",
-          url: "https://tu-dominio.com/solicitud-de-cotizacion",
+          url: "https://hmmobility.services/solicitud-de-cotizacion",
           description:
             "Solicita una cotización rápida y personalizada para tu próximo traslado con HM Mobility. Servicio privado, seguro y disponible 24/7 en México.",
           publisher: {
             "@type": "Organization",
             name: "HM Mobility",
-            url: "https://tu-dominio.com",
+            url: "https://hmmobility.services",
           },
         })}
       </script>

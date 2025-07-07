@@ -9,7 +9,7 @@ export default function SeoPrivacy() {
         content="Conoce cómo HM Mobility protege tu información personal. Nuestra política de privacidad garantiza la confidencialidad y seguridad de tus datos."
       />
       <meta name="robots" content="noindex, follow" />
-      <link rel="canonical" href="https://tu-dominio.com/privacy-policy" />
+      <link rel="canonical" href="https://hmmobility.services/politica-de-privacidad" />
 
       <script type="application/ld+json">
         {JSON.stringify({
@@ -18,7 +18,7 @@ export default function SeoPrivacy() {
           name: "Política de Privacidad",
           description:
             "Conoce cómo HM Mobility protege tu información personal. Nuestra política de privacidad garantiza la confidencialidad y seguridad de tus datos.",
-          url: "https://tu-dominio.com/privacy-policy",
+          url: "https://hmmobility.services/politica-de-privacidad",
         })}
       </script>
     </Helmet>

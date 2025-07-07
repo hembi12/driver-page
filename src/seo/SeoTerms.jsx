@@ -9,16 +9,16 @@ export default function SeoTerms() {
         content="Conoce los términos y condiciones de uso del servicio de transporte privado de HM Mobility. Lee nuestras políticas antes de reservar."
       />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://tu-dominio.com/terms-and-conditions" />
+      <link rel="canonical" href="https://hmmobility.services/terminos-y-condiciones" />
 
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "name": "Términos y Condiciones",
-          "description":
+          name: "Términos y Condiciones",
+          description:
             "Conoce los términos y condiciones de uso del servicio de transporte privado de HM Mobility. Lee nuestras políticas antes de reservar.",
-          "url": "https://tu-dominio.com/terms-and-conditions"
+          url: "https://hmmobility.services/terminos-y-condiciones",
         })}
       </script>
     </Helmet>

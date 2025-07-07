@@ -27,18 +27,18 @@ export default function SeoHome() {
         name="description"
         content="Transporte privado confiable y seguro en todo México. Solicita tu cotización en línea y viaja con HM Mobility. Disponible 24/7."
       />
-      <link rel="canonical" href="https://tu-dominio.com/" />
+      <link rel="canonical" href="https://hmmobility.services/" />
 
       {/* 1. WebSite principal */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          url: "https://tu-dominio.com",
+          url: "https://hmmobility.services",
           name: "HM Mobility",
           potentialAction: {
             "@type": "SearchAction",
-            target: "https://tu-dominio.com/?q={search_term_string}",
+            target: "https://hmmobility.services/?q={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         })}
@@ -51,19 +51,19 @@ export default function SeoHome() {
           "@type": "WebPage",
           name: "Solicita tu Cotización | HM Mobility",
           description: "Completa el formulario para recibir una cotización personalizada para tu traslado privado. Disponible 24/7.",
-          url: "https://tu-dominio.com/#cotizacion",
+          url: "https://hmmobility.services/#cotizacion",
           mainEntity: {
             "@type": "Service",
             name: "Cotización de traslados privados",
             provider: {
               "@type": "Organization",
               name: "HM Mobility",
-              url: "https://tu-dominio.com",
+              url: "https://hmmobility.services",
             },
             areaServed: { "@type": "Country", name: "México" },
             availableChannel: {
               "@type": "ServiceChannel",
-              serviceUrl: "https://tu-dominio.com/#cotizacion",
+              serviceUrl: "https://hmmobility.services/#cotizacion",
               availableLanguage: "Spanish",
             },
             serviceType: "Cotización de viajes privados, traslados al aeropuerto, viajes foráneos, pet friendly.",
@@ -94,8 +94,8 @@ export default function SeoHome() {
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "HM Mobility",
-          url: "https://tu-dominio.com",
-          logo: "https://tu-dominio.com/logo.png",
+          url: "https://hmmobility.services",
+          logo: "https://hmmobility.services/logo.png",
           sameAs: [
             "https://www.facebook.com/hmmobility",
             "https://www.instagram.com/hmmobility",
@@ -142,7 +142,7 @@ export default function SeoHome() {
                 name: "Suzuki Ertiga Plata",
                 modelDate: "2022",
                 description: "Camioneta cómoda y espaciosa, ideal para traslados familiares o de grupos. Color plata, modelo 2022.",
-                image: "https://tu-dominio.com/ertigaplata.webp",
+                image: "https://hmmobility.services/ertigaplata.webp",
               },
             },
             {
@@ -153,7 +153,7 @@ export default function SeoHome() {
                 name: "Suzuki Ertiga Blanca",
                 modelDate: "2019",
                 description: "Vehículo versátil y confiable, perfecto para viajes largos o servicios privados. Color blanco, modelo 2019.",
-                image: "https://tu-dominio.com/ertigablanca.webp",
+                image: "https://hmmobility.services/ertigablanca.webp",
               },
             },
           ],
@@ -167,11 +167,11 @@ export default function SeoHome() {
           "@type": "WebPage",
           name: "Estadísticas de HM Mobility",
           description: "Resumen de experiencia, seguridad y satisfacción de clientes de HM Mobility.",
-          url: "https://tu-dominio.com/#experiencia",
+          url: "https://hmmobility.services/#experiencia",
           mainEntity: {
             "@type": "Organization",
             name: "HM Mobility",
-            url: "https://tu-dominio.com",
+            url: "https://hmmobility.services",
             additionalProperty: [
               { "@type": "PropertyValue", name: "Calificación promedio", value: "4.97" },
               { "@type": "QuantitativeValue", name: "Valoraciones de 5 estrellas", value: 26100 },
