@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hm-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+    rootDir: backend
