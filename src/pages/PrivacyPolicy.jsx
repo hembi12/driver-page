@@ -62,10 +62,10 @@ export default function PrivacyPolicy() {
           Puedes solicitar en cualquier momento la modificación o eliminación de
           tus datos personales escribiéndonos a:{" "}
           <a
-            href="mailto:hectormartilb@gmail.com"
+            href="mailto:marcodigitaltv@gmail.com"
             className="text-blue-700 hover:text-blue-600 hover:underline"
           >
-            hectormartilb@gmail.com
+            marcodigitaltv@gmail.com
           </a>
           .
         </p>

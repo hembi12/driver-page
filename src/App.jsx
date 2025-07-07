@@ -44,7 +44,7 @@ export default function App() {
           />
           <Route path="/solicitud-de-cotizacion" element={<QuoteRequest />} />
           <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
-          <Route path="/terminos-y-condiciones" element={<TermsAndConditions />} />
+          <Route path="/terminos-condiciones" element={<TermsAndConditions />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </main>

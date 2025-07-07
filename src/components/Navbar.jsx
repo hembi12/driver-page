@@ -18,7 +18,7 @@ export default function Navbar() {
   const mostrarSoloLogo = [
     "/solicitud-de-cotizacion",
     "/politica-de-privacidad",
-    "/terminos-y-condiciones",
+    "/terminos-condiciones",
   ].includes(location.pathname);
 
   return (
