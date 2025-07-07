@@ -11,9 +11,7 @@ const tabs = [
 export default function Hero() {
   const [activeTab, setActiveTab] = useState("inicio");
   const [isPaused, setIsPaused] = useState(false);
-  const [showBackground, setShowBackground] = useState(false);
   const sectionRef = useRef(null);
-
   const lastInteractionRef = useRef(Date.now());
   const intervalRef = useRef(null);
   const resumeTimeoutRef = useRef(null);
@@ -47,29 +45,13 @@ export default function Hero() {
     return () => clearInterval(intervalRef.current);
   }, [isPaused, nextTab]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowBackground(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
       ref={sectionRef}
       id="inicio"
-      className={`h-screen flex items-center justify-center px-4 sm:px-6 transition-colors duration-1000 ${
-        showBackground
-          ? "bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
-          : "bg-black"
-      }`}
+      className="h-screen flex items-center justify-center px-4 sm:px-6
+                 bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed
+                 transition-colors duration-1000"
       aria-label="Sección principal de bienvenida"
     >
       <div className="max-w-lg w-full px-6 sm:px-10 py-8 rounded-3xl bg-black/30 backdrop-blur-md shadow-xl border border-white/20">
