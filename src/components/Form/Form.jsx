@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import { Helmet } from "react-helmet-async";
 import TravelForm from "./TravelForm";
 
 export default function Form() {
@@ -92,17 +91,11 @@ export default function Form() {
       className="py-16 px-4 bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-100"
       aria-labelledby="cotizacion-title"
     >
-      {/* ✅ Meta tags para SEO */}
-      <Helmet>
-        <title>Solicita tu Cotización | HM Mobility</title>
-        <meta
-          name="description"
-          content="Completa el formulario para recibir una cotización personalizada para tu traslado privado. Disponible 24/7."
-        />
-      </Helmet>
-
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 id="cotizacion-title" className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
+        <h2
+          id="cotizacion-title"
+          className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2"
+        >
           Solicita tu cotización
         </h2>
         <p className="text-gray-600 text-lg">

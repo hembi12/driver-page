@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, lazy, Suspense } from "react";
-import { Helmet } from "react-helmet-async";
 
 const StatsGrid = lazy(() => import("./StatsGrid")); // carga diferida
 
@@ -34,22 +33,6 @@ export default function Stats() {
           : "bg-black"
       }`}
     >
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AggregateRating",
-            "ratingValue": "4.97",
-            "reviewCount": "26100",
-            "itemReviewed": {
-              "@type": "Organization",
-              "name": "HM Mobility",
-              "url": "https://tusitio.com"
-            }
-          })}
-        </script>
-      </Helmet>
-
       {showStats && (
         <Suspense
           fallback={

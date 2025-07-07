@@ -13,7 +13,6 @@ import {
   Gem,
   Wallet,
 } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 export default function HeroTabs({ activeTab }) {
   const steps = [
@@ -77,23 +76,6 @@ export default function HeroTabs({ activeTab }) {
     case "reservar":
       return (
         <section aria-labelledby="reservar-title" className="text-center">
-          <Helmet>
-            <script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "HowTo",
-                "name": "Cómo reservar un viaje con HM Mobility",
-                "description": "Sigue estos pasos para reservar un viaje privado con nosotros.",
-                "step": steps.map((step, index) => ({
-                  "@type": "HowToStep",
-                  "position": index + 1,
-                  "name": step.title,
-                  "text": step.desc,
-                })),
-              })}
-            </script>
-          </Helmet>
-
           <Calendar className="w-16 h-16 text-green-400 mx-auto mb-4" aria-hidden="true" />
           <h2 id="reservar-title" className="text-4xl font-light text-white mb-6">
             ¿Cómo Reservar?

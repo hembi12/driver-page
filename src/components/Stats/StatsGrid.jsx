@@ -10,7 +10,7 @@ import {
   Smile,
 } from "lucide-react";
 
-// Icons como componentes, no JSX directo
+// Iconos configurados con color
 const Iconos = [
   { Icon: ThumbsUp, color: "text-green-400" },
   { Icon: Star, color: "text-yellow-400" },
@@ -22,6 +22,7 @@ const Iconos = [
   { Icon: Smile, color: "text-teal-400" },
 ];
 
+// Datos de las estadísticas
 const datos = [
   { valor: 4.97, etiqueta: "Calificación promedio", esDecimal: true },
   { valor: 26100, etiqueta: "Valoraciones de 5 estrellas" },
@@ -41,20 +42,20 @@ export default function StatsGrid() {
       setContadores((prev) =>
         prev.map((actual, i) => {
           const meta = datos[i].valor;
-          if (actual >= meta) return meta;
-          const incremento = Math.ceil(meta / 80); // más suave
+          if (actual >= meta) return actual;
+          const incremento = Math.ceil(meta / 80);
           return Math.min(actual + incremento, meta);
         })
       );
-    }, 50); // más suave que 30ms
-
+    }, 50);
     return () => clearInterval(interval);
   }, []);
 
   const formatNumber = (valor, i) => {
     const stat = datos[i];
-    if (stat.esDecimal) return valor.toFixed(2);
-    if (stat.esPorcentaje) return `${valor}%`;
+    if (stat.esDecimal)
+      return valor.toFixed(2).replace(/\.00$/, ""); // elimina .00 innecesario
+    if (stat.esPorcentaje) return `${valor.toFixed(0)}%`;
     if (stat.sufijo) return `${valor}${stat.sufijo}`;
     return valor.toLocaleString();
   };
@@ -70,7 +71,7 @@ export default function StatsGrid() {
       <p className="text-center text-white/80 text-base max-w-2xl mx-auto mb-10">
         Cada número representa nuestro compromiso con la excelencia, la seguridad y la satisfacción de nuestros clientes.
       </p>
-  
+
       <div
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
         role="list"
@@ -84,8 +85,11 @@ export default function StatsGrid() {
               aria-label={`${formatNumber(contadores[i], i)} ${stat.etiqueta}`}
               className="bg-black/10 text-white border border-white/40 p-6 rounded-xl text-center"
             >
-              <Icon className={`w-6 h-6 mx-auto ${color}`} />
-              <p className="text-2xl font-bold text-neutral-100 mt-2">
+              <Icon className={`w-6 h-6 mx-auto ${color}`} aria-hidden="true" />
+              <p
+                className="text-2xl font-bold text-neutral-100 mt-2"
+                aria-live="polite"
+              >
                 {formatNumber(contadores[i], i)}
               </p>
               <p className="text-sm mt-2 text-white/80 font-medium">
