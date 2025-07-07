@@ -29,7 +29,7 @@ export default function Stats() {
       aria-labelledby="stats-title"
       className={`min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 transition-colors duration-1000 ${
         showBackground
-          ? "bg-[url('images/mexico.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
+          ? "bg-[url('/images/mexico.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
           : "bg-black"
       }`}
     >
