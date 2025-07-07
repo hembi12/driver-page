@@ -225,7 +225,7 @@ export default function QuoteForm() {
               ¡Cotización enviada!
             </h3>
             <p className="text-gray-600 mb-2">
-              Gracias por compartir tus datos. Pronto recibirás una respuesta.
+              Gracias por solicitar una cotización. Pronto recibirás una respuesta.
             </p>
             <p className="text-sm text-gray-500 mb-6">
               Tu número de confirmación es:{" "}
