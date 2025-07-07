@@ -186,7 +186,7 @@ export default function QuoteForm() {
             </a>{" "}
             y los{" "}
             <a
-              href="/terminos-y-condiciones"
+              href="/terminos-condiciones"
               className="text-blue-700 hover:text-blue-600 hover:underline"
             >
               términos y condiciones

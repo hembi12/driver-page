@@ -1,7 +1,7 @@
 "use client";
 
 import { useNavigate } from "react-router-dom";
-import SeoTerms from "../seo/SeoTerms"; // asegúrate que la ruta sea correcta
+import SeoTerms from "../seo/SeoTerms";
 
 export default function TermsAndConditions() {
   const navigate = useNavigate();

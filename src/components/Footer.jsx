@@ -25,7 +25,7 @@ export default function Footer() {
             Política de privacidad
           </a>
           <a
-            href="/terminos-y-condiciones"
+            href="/terminos-condiciones"
             className="hover:text-neutral-100 hover:underline transition"
           >
             Términos y condiciones
