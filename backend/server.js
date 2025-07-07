@@ -1,3 +1,4 @@
+/* eslint-env node */
 import express from "express";
 import cors from "cors";
 import emailRouter from "./routes/email.js";
@@ -11,6 +12,8 @@ app.use(express.json());
 
 app.use("/", emailRouter);
 
-app.listen(3001, () => {
-  console.log("🚀 Servidor backend corriendo en http://localhost:3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor backend corriendo en http://localhost:${PORT}`);
 });
