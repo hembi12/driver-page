@@ -46,48 +46,36 @@ export default function Hero() {
   }, [isPaused, nextTab]);
 
   return (
-    <>
-      {/* ✅ Imagen invisible para cumplir con fetchpriority="high" */}
-      <img
-        src="/images/hero-bg.webp"
-        fetchpriority="high"
-        alt=""
-        style={{ display: "none" }}
-        width="0"
-        height="0"
-      />
-
-      <section
-        ref={sectionRef}
-        id="inicio"
-        className="h-screen flex items-center justify-center px-4 sm:px-6
-                   bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed
-                   transition-colors duration-1000"
-        aria-label="Sección principal de bienvenida"
-      >
-        <div className="max-w-lg w-full px-6 sm:px-10 py-8 rounded-3xl bg-black/30 backdrop-blur-md shadow-xl border border-white/20">
-          <div className="min-h-[450px] flex flex-col items-center justify-center text-center space-y-6">
-            <div className="w-full transition-all duration-300 ease-out">
-              <HeroTabs activeTab={activeTab} onTabChange={handleInteraction} />
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-6 gap-2">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => handleInteraction(tab.id)}
-                aria-label={`Ir a ${tab.label}`}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? "bg-white w-6"
-                    : "bg-white/40 hover:bg-white/60"
-                }`}
-              />
-            ))}
+    <section
+      ref={sectionRef}
+      id="inicio"
+      className="h-screen flex items-center justify-center px-4 sm:px-6
+                 bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed
+                 transition-colors duration-1000"
+      aria-label="Sección principal de bienvenida"
+    >
+      <div className="max-w-lg w-full px-6 sm:px-10 py-8 rounded-3xl bg-black/30 backdrop-blur-md shadow-xl border border-white/20">
+        <div className="min-h-[450px] flex flex-col items-center justify-center text-center space-y-6">
+          <div className="w-full transition-all duration-300 ease-out">
+            <HeroTabs activeTab={activeTab} onTabChange={handleInteraction} />
           </div>
         </div>
-      </section>
-    </>
+
+        <div className="flex justify-center mt-6 gap-2">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => handleInteraction(tab.id)}
+              aria-label={`Ir a ${tab.label}`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                activeTab === tab.id
+                  ? "bg-white w-6"
+                  : "bg-white/40 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
