@@ -31,6 +31,7 @@ function formatearFechaISO(fechaStr) {
 export default function SeoHome() {
   return (
     <Helmet>
+      {/* Metadatos principales */}
       <title>HM Mobility | Traslados privados 24/7 en México</title>
       <meta
         name="description"

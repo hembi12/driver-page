@@ -4,18 +4,16 @@ const vehicles = [
   {
     id: "plata",
     nombre: "Suzuki Ertiga Plata",
-    modelo: "2022",
     imagen: "images/ertigaplata.webp",
     descripcion:
-      "Camioneta cómoda y espaciosa, ideal para traslados familiares o de grupos. Color plata, modelo 2022.",
+      "Camioneta cómoda y espaciosa, ideal para traslados familiares o de grupos. Color plata.",
   },
   {
     id: "blanca",
     nombre: "Suzuki Ertiga Blanca",
-    modelo: "2019",
     imagen: "images/ertigablanca.webp",
     descripcion:
-      "Vehículo versátil y confiable, perfecto para viajes largos o servicios privados. Color blanco, modelo 2019.",
+      "Vehículo versátil y confiable, perfecto para viajes largos o servicios privados. Color blanco.",
   },
 ];
 
@@ -61,12 +59,11 @@ export default function Vehicles() {
                   className="text-xl font-semibold text-gray-900"
                   itemProp="name"
                 >
-                  {vehiculo.nombre} ({vehiculo.modelo})
+                  {vehiculo.nombre}
                 </h3>
                 <p className="mt-2 text-gray-700" itemProp="description">
                   {vehiculo.descripcion}
                 </p>
-                <meta itemProp="modelDate" content={vehiculo.modelo} />
               </div>
             </article>
           ))}
